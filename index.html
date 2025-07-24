@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orange Sound Revolution - Powered by Sign</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <link rel="stylesheet" href="styles.css"/>
   </head>
   <body>
@@ -102,19 +103,45 @@
           <h3>
             Join our email list
           </h3>
-          <!-- <input type="email" name="email" class="input"  required placeholder="Email">
-          <input type="submit" class="button">
-          <a href="mailto:sounddotsign@gmail.com" class="button">Submit</a> -->
-          <form netlify action="https://formsubmit.co/sounddotsign@gmail.com" method="POST">
-            <input type="email" name="Email" class="input" placeholder="yoourmail@email.com" required>
-            <input type="text" name="X Username" class="input" placeholder="@johnDoe" required>
-            <input type="text" name="TG Username" class="input" placeholder="@isaacNewton" required>
-            <input type="number" name="Whatsapp No." class="input" placeholder="+0123456789" required>
-            <!-- Anti-spam + redirect -->
-            <input type="text" name="_honey" style="display:none">
-            <input type="hidden" name="_next" value="thanks.html">
-            <button type="submit" class="button">Submit</button>
-          </form>
+          <form id="signup-form">
+    <input type="text" name="name" class="input" placeholder="Your Name" required><br>
+    <input type="email" name="email" class="input" placeholder="yourmail@email.com" required><br>
+    <input type="text" name="x_username" class="input" placeholder="@johnDoe" required><br>
+    <input type="text" name="tg_username" class="input" placeholder="@isaacNewton"><br>
+    <input type="number" name="whatsapp_no" class="input" placeholder="+0123456789" required><br>
+
+    <button type="submit" class="button">Submit</button>
+  </form>
+
+  <script>
+    const SUPABASE_URL = "https://ikicgfiwprrrntqfkxqu.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlraWNnZml3cHJycm50cWZreHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzOTM1OTUsImV4cCI6MjA2ODk2OTU5NX0.BswdXXptVyNPm_tew9ujw3AtuZ1yBc9aV2J4R3HjTow";
+
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    document.getElementById("signup-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        x_username: form.x_username.value,
+        tg_username: form.tg_username.value,
+        whatsapp_no: parseFloat(form.whatsapp_no.value)
+      };
+
+      const { error } = await supabase.from("forms1_1").insert([data]);
+
+      if (error) {
+        alert("❌ Failed to submit: " + error.message);
+      } else {
+        alert("✅ Form submitted successfully!");
+        // window.location.href = "thanks.html"; // change to your thank-you page
+      }
+    });
+  </script>
+
 
         </div>
         <div class="linkList">
