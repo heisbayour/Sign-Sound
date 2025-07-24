@@ -1,0 +1,340 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+margin: 0;
+color: #6b5353;
+background-color: #ed7014;
+line-height: 1.5;
+}
+.intro,
+.spotlight,
+.highlight,
+.teammates,
+.body {
+font-family: sans-serif;
+}
+header,
+.intro,
+.spotlight,
+.highlight,
+.teammates,
+.body {
+padding: 8rem 5rem;
+text-align: left;
+}
+header {
+background-color: #fda172;
+}
+.logo {
+font-size: 2.5rem;
+font-weight: bold;
+color: #fff;
+letter-spacing: 2px;
+}
+.logo-sound {
+font-size: 2.5rem;
+color: #fff;
+margin-left: 1rem;
+display: flex;
+position: relative;
+bottom: 3rem;
+left: 6rem;
+}
+.header-image{
+    width: 20rem;
+}
+img{
+    padding: 2rem;
+    border-radius: 30% 0 30% 0;
+}
+.sub-logo {
+margin-top: 0.5rem;
+color: #fff;
+font-style: italic;
+display: flex;
+position: relative;
+bottom: 2rem;
+}
+.nav-links {
+display: flex;
+flex-wrap: wrap;
+gap: 10rem;
+margin-top: 3rem;
+list-style: none;
+padding: 3rem;
+letter-spacing: 0.5rem;
+}
+.nav-links li {
+list-style: none;
+}
+.nav-links a {
+text-decoration: none;
+color: #fff1d7;
+font-size: 1.2rem;
+}
+.para {
+color: #fef2db;
+font-size: 1.2rem;
+font-weight: bold;
+}
+.para-black{
+    color: #f9f1e5;
+    font-size: 1.2rem;
+}
+p.para-black{
+    font-weight: bold;
+}
+h2 {
+color: #fff;
+margin-bottom: 1rem;
+}
+.intro {
+    background-image: url('img/roadmap.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.spotlight {
+    background-image: url('img/artist-spotlight.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.highlight {
+background-color: #ff5500;
+}
+.teammates {
+
+background-color: #db6b33;
+}
+.body {
+background-color: #db6b33;
+}
+.socials {
+background-color: #431803;
+text-align: center;
+padding: 5rem 2rem;
+}
+.linkList {
+margin: 1rem 0;
+}
+.linkList a {
+color: #fff;
+text-decoration: none;
+font-size: 1.1rem;
+}
+footer {
+margin-top: 4rem;
+text-align: center;
+color: #fff;
+font-weight: 300;
+font-size: 1rem;
+}
+
+.roadmap{
+    text-decoration: overline;
+    color: #e89362;
+}
+@media screen and (max-width: 768px) {
+header,
+.intro,
+.spotlight,
+.highlight,
+.teammates,
+.body {
+    padding: 6rem 3rem;
+}
+.logo {
+    font-size: 2rem;
+}
+.logo-sound {
+    font-size: 2rem;
+    display: block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+}
+.nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-decoration: underline;
+}
+.para {
+    font-size: 1rem;
+}
+.linkList a {
+    font-size: 1rem;
+}
+footer {
+    font-size: 0.9rem;
+}
+}
+
+@media screen and (max-width: 480px) {
+header,
+.intro,
+.spotlight,
+.highlight,
+.teammates,
+.body {
+    padding: 4rem 1.5rem;
+}
+.logo {
+    font-size: 1.6rem;
+}
+.logo-sound {
+    font-size: 1.6rem;
+}
+.thanks {
+    padding: 4rem 1rem;
+  }
+
+  .thanks h1 {
+    font-size: 1.8rem;
+  }
+
+  .thanks h3 {
+    font-size: 1rem;
+  }
+.nav-links a {
+    font-size: 1rem;
+    display: inline-block;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    list-style: none;
+    padding: 3rem;
+    letter-spacing: 0.1rem;
+}
+}
+
+.button {
+  color: #090909;
+  padding: 0.2em 0.4em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.button:hover {
+  border: 1px solid white;
+}
+
+.button:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+.thanks {
+    background-image: url('img/roadmap.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 6rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.thanks h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.thanks h3 {
+    font-size: 1.2rem;
+    color: #fff1d7;
+}
+
+
+.input {
+ border: none;
+ padding: 1rem;
+ border-radius: 1rem;
+ background: #e8e8e8;
+ box-shadow: 20px 20px 60px #f5b846,
+		-20px -20px 60px #cec29b;
+ transition: 0.3s;
+}
+
+.input:focus {
+ outline-color: #82460e;
+ background: #ff6a00;
+ box-shadow: inset 20px 20px 60px #c5c5c5,
+		inset -20px -20px 60px #b98345;
+ transition: 0.3s;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.content {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ff8f4d;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.image {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+.title {
+  display: block;
+  font-weight: bold;
+  color: #fef2db;
+  margin-top: 0.5rem;
+}
+
+.name {
+  display: block;
+  font-size: 0.95rem;
+  color: #fff;
+  margin-top: 0.2rem;
+}
+
+.intro,
+.spotlight,
+.thanks {
+  position: relative;
+  z-index: 1;
+  color: #fff; /* Ensure text remains visible */
+  overflow: hidden; /* Prevent pseudo-element from overflowing */
+}
+
+.intro::before,
+.spotlight::before,
+.thanks::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); /* Adjust blur strength */
+  opacity: 1; /* Optional: control how visible the background is */
+  z-index: -1;
+}
