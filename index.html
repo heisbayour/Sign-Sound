@@ -104,11 +104,11 @@
             Join our email list
           </h3>
           <form id="signup-form">
-    <input type="text" name="name" class="input" placeholder="Your Name" required><br>
-    <input type="email" name="email" class="input" placeholder="yourmail@email.com" required><br>
-    <input type="text" name="x_username" class="input" placeholder="@johnDoe" required><br>
-    <input type="text" name="tg_username" class="input" placeholder="@isaacNewton"><br>
-    <input type="number" name="whatsapp_no" class="input" placeholder="+0123456789" required><br>
+    <input type="text" name="name" class="input" placeholder="Your Name" required>
+    <input type="email" name="email" class="input" placeholder="yourmail@email.com" required>
+    <input type="text" name="x_username" class="input" placeholder="@johnDoe" required>
+    <input type="text" name="tg_username" class="input" placeholder="@isaacNewton">
+    <input type="number" name="whatsapp_no" class="input" placeholder="+0123456789" required>
 
     <button type="submit" class="button">Submit</button>
   </form>
@@ -121,21 +121,22 @@
 
     document.querySelector('form').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const name = document.querySelector('input[name="Name"]').value;
-    const email = document.querySelector('input[name="Email"]').value;
-    const xUser = document.querySelector('input[name="X Username"]').value;
-    const tgUser = document.querySelector('input[name="TG Username"]').value;
-    const whatsapp = document.querySelector('input[name="Whatsapp No."]').value;
+    const name = document.querySelector('input[name="name"]').value;
+const email = document.querySelector('input[name="email"]').value;
+const xUser = document.querySelector('input[name="x_username"]').value;
+const tgUser = document.querySelector('input[name="tg_username"]').value;
+const whatsapp = document.querySelector('input[name="whatsapp_no"]').value;
 
       const { data, error } = await supabase
       .from('submissions')
       .insert([{ 
-        name: name;
-        email: email, 
-        x_username: xUser, 
-        tg_username: tgUser, 
-        whatsapp_no: whatsapp 
-      }]); 
+  name: name,
+  email: email, 
+  x_username: xUser, 
+  tg_username: tgUser, 
+  whatsapp_no: whatsapp 
+}]); 
+
 
     if (error) {
       alert('Error saving: ' + error.message);
