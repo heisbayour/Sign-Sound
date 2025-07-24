@@ -114,34 +114,37 @@
   </form>
 
   <script>
-    const SUPABASE_URL = "https://ikicgfiwprrrntqfkxqu.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlraWNnZml3cHJycm50cWZreHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzOTM1OTUsImV4cCI6MjA2ODk2OTU5NX0.BswdXXptVyNPm_tew9ujw3AtuZ1yBc9aV2J4R3HjTow";
+    const supabaseUrl = "https://ikicgfiwprrrntqfkxqu.supabase.co";
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlraWNnZml3cHJycm50cWZreHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzOTM1OTUsImV4cCI6MjA2ODk2OTU5NX0.BswdXXptVyNPm_tew9ujw3AtuZ1yBc9aV2J4R3HjTow";
 
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    document.getElementById("signup-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
+    document.querySelector('form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const name = document.querySelector('input[name="Name"]').value;
+    const email = document.querySelector('input[name="Email"]').value;
+    const xUser = document.querySelector('input[name="X Username"]').value;
+    const tgUser = document.querySelector('input[name="TG Username"]').value;
+    const whatsapp = document.querySelector('input[name="Whatsapp No."]').value;
 
-      const form = e.target;
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        x_username: form.x_username.value,
-        tg_username: form.tg_username.value,
-        whatsapp_no: parseFloat(form.whatsapp_no.value)
-      };
+      const { data, error } = await supabase
+      .from('submissions')
+      .insert([{ 
+        name: name;
+        email: email, 
+        x_username: xUser, 
+        tg_username: tgUser, 
+        whatsapp_no: whatsapp 
+      }]); 
 
-      const { error } = await supabase.from("forms1_1").insert([data]);
-
-      if (error) {
-        alert("❌ Failed to submit: " + error.message);
-      } else {
-        alert("✅ Form submitted successfully!");
-        // window.location.href = "thanks.html"; // change to your thank-you page
-      }
-    });
-  </script>
-
+    if (error) {
+      alert('Error saving: ' + error.message);
+    } else {
+      alert('Submitted successfully!');
+      window.location.href = "thanks.html";
+    }
+  });
+</script>
 
         </div>
         <div class="linkList">
