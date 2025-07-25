@@ -101,9 +101,12 @@
       <div class="socials">
         <div class="subscription">
           <h3>
-            Join our email list
+            Join our community
           </h3>
-          <form id="signup-form">
+          <form
+  action="https://formspree.io/f/xldlbjvn"
+  method="POST"
+>
     <input type="text" name="name" class="input" placeholder="Your Name" required>
     <input type="email" name="email" class="input" placeholder="yourmail@email.com" required>
     <input type="text" name="x_username" class="input" placeholder="@johnDoe" required>
@@ -112,40 +115,6 @@
 
     <button type="submit" class="button">Submit</button>
   </form>
-
-  <script>
-    const supabaseUrl = "https://ikicgfiwprrrntqfkxqu.supabase.co";
-    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlraWNnZml3cHJycm50cWZreHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzOTM1OTUsImV4cCI6MjA2ODk2OTU5NX0.BswdXXptVyNPm_tew9ujw3AtuZ1yBc9aV2J4R3HjTow";
-
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
-    document.querySelector('form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const name = document.querySelector('input[name="name"]').value;
-const email = document.querySelector('input[name="email"]').value;
-const xUser = document.querySelector('input[name="x_username"]').value;
-const tgUser = document.querySelector('input[name="tg_username"]').value;
-const whatsapp = document.querySelector('input[name="whatsapp_no"]').value;
-
-      const { data, error } = await supabase
-      .from('submissions')
-      .insert([{ 
-  name: name,
-  email: email, 
-  x_username: xUser, 
-  tg_username: tgUser, 
-  whatsapp_no: whatsapp 
-}]); 
-
-
-    if (error) {
-      alert('Error saving: ' + error.message);
-    } else {
-      alert('Submitted successfully!');
-      window.location.href = "thanks.html";
-    }
-  });
-</script>
 
         </div>
         <div class="linkList">
